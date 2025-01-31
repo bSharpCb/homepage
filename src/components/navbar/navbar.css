@@ -16,8 +16,7 @@ nav{
     
 }
 
-nav a{
-
+nav span{
     background: transparent;
     padding: 0.9rem;
     border-radius: 50%;
@@ -27,13 +26,11 @@ nav a{
    
 }
 
-nav a:hover{
-
+nav span:hover{
     background: rgba(0, 0, 0, 0.4);
 }
 
-nav a.active{
-
+nav span.active{
     background: var(--color-primary);
     color: var(--color-bg);
 }

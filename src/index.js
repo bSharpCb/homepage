@@ -1,4 +1,3 @@
-import ReactDOM from "react-dom";
 import App from "./App";
 import {StrictMode} from 'react';
 import "./index.css"
@@ -12,5 +11,3 @@ root.render(
         <App />
     </StrictMode>,
 );
-
-//ReactDOM.render(<App />, document.querySelector("#root"));
