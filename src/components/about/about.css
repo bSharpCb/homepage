@@ -25,8 +25,6 @@
 
     border-radius: 2rem;
     overflow: hidden;
-    transform: rotate(-10deg);
-    transition: var(--transition);
 }
 
 .about__me-image:hover{
@@ -36,7 +34,6 @@
 
 
 .about__content p{
-
     margin: 2rem 0 2.6rem;
     color: var(--color-light);
 }
@@ -83,5 +80,9 @@
     .about__content p{
 
         margin: 1.5rem 0;
+    }
+
+    .sprite{
+        width:120px;
     }
 }

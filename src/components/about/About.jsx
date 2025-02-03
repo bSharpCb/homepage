@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './about.css'
-import myImage from '../../assets/headshot.jpeg'
+import headShot from '../../assets/headshot.jpeg'
+import myImage from '../../assets/brad_stand.gif'
 import CTA from './CTA'
 
 const About = () => {
+  const [currentPicture, setPicture] = useState(headShot);
+  const [spriteToggle, setSpriteToggle] = useState("");
   return (
     <section id='about'>
       
@@ -13,7 +16,15 @@ const About = () => {
 
           <div className="about__me">
             <div className="about__me-image">
-                <img src={myImage} alt="Me" />
+                <img src={currentPicture} alt="Me" className={spriteToggle} onClick={()=>{
+                  if(currentPicture === headShot){
+                    setPicture(myImage);
+                    setSpriteToggle("sprite");
+                  } else {
+                    setPicture(headShot);
+                    setSpriteToggle("");
+                  }
+                  }} />
             </div>
           </div>
 
