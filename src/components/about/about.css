@@ -18,7 +18,8 @@
     width: 90%;
     aspect-ratio: 1/1;
     border-radius: 2rem;
-    background: linear-gradient(-45deg, transparent, var(--color-primary), transparent);
+    /*background: linear-gradient(-45deg, transparent, var(--color-primary), transparent);*/
+    background-image: url("../../assets/background.png");
     display: grid;
     place-items: center;
     padding-top: 1rem;
@@ -72,7 +73,7 @@
 
     .about__me{
 
-        width: 65%;
+        width: 100%;
         margin: 0 auto 3rem;
     }
 
