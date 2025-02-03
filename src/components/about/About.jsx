@@ -1,12 +1,33 @@
 import React, { useState } from 'react'
 import './about.css'
 import headShot from '../../assets/headshot.jpeg'
-import myImage from '../../assets/brad_stand.gif'
+import myImage from '../../assets/remy_stand.gif'
+import wFwdRemy from '../../assets/remy_w_fwd.gif'
+import wBackRemy from '../../assets/remy_w_back.gif'
 import CTA from './CTA'
 
 const About = () => {
-  const [currentPicture, setPicture] = useState(headShot);
+  const [currentPicture, setPicture] = useState(wFwdRemy);
   const [spriteToggle, setSpriteToggle] = useState("");
+  const [inputValue, setInputValue] = useState('');
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'ArrowLeft') {
+      setPicture(wBackRemy);
+    }
+    if (event.key === 'ArrowRight') {
+      setPicture(wFwdRemy);
+    }
+  }
+  const handleKeyUp = (event) => {
+    if (event.key === 'ArrowLeft') {
+      setPicture(myImage);
+    }
+    if (event.key === 'ArrowRight') {
+      setPicture(myImage);
+    }
+  }
+
   return (
     <section id='about'>
       
@@ -16,7 +37,8 @@ const About = () => {
 
           <div className="about__me">
             <div className="about__me-image">
-                <img src={currentPicture} alt="Me" className={spriteToggle} onClick={()=>{
+                <img src={currentPicture} alt="Me" className={spriteToggle} 
+                onClick={()=>{
                   if(currentPicture === headShot){
                     setPicture(myImage);
                     setSpriteToggle("sprite");
@@ -24,7 +46,12 @@ const About = () => {
                     setPicture(headShot);
                     setSpriteToggle("");
                   }
-                  }} />
+                  }}/>
+                <input type="text" value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  onKeyUp={handleKeyUp}
+                />
             </div>
           </div>
 

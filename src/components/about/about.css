@@ -2,6 +2,10 @@
     font-size: 2.5em;
 }
 
+.inputReader{
+    display: none;
+}
+
 .about__container{
 
     display: grid;
