@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './about.css'
 import headShot from '../../assets/headshot.jpeg'
 import myImage from '../../assets/remy_stand.gif'
@@ -9,24 +9,32 @@ import CTA from './CTA'
 const About = () => {
   const [currentPicture, setPicture] = useState(wFwdRemy);
   const [spriteToggle, setSpriteToggle] = useState("");
-  const [inputValue, setInputValue] = useState('');
 
-  const handleKeyDown = (event) => {
-    if (event.key === 'ArrowLeft') {
-      setPicture(wBackRemy);
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'ArrowLeft') {
+        setPicture(wBackRemy);
+      }
+      if (event.key === 'ArrowRight') {
+        setPicture(wFwdRemy);
+      }
     }
-    if (event.key === 'ArrowRight') {
-      setPicture(wFwdRemy);
+    const handleKeyUp = (event) => {
+      if (event.key === 'ArrowLeft') {
+        setPicture(myImage);
+      }
+      if (event.key === 'ArrowRight') {
+        setPicture(myImage);
+      }
     }
-  }
-  const handleKeyUp = (event) => {
-    if (event.key === 'ArrowLeft') {
-      setPicture(myImage);
-    }
-    if (event.key === 'ArrowRight') {
-      setPicture(myImage);
-    }
-  }
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
+    return () => {
+
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
+    };
+  }, []);
 
   return (
     <section id='about'>
@@ -47,11 +55,6 @@ const About = () => {
                     setSpriteToggle("");
                   }
                   }}/>
-                <input type="text" value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                  onKeyUp={handleKeyUp}
-                />
             </div>
           </div>
 
