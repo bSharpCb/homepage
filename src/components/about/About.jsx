@@ -82,7 +82,7 @@ const About = () => {
             <p>
                     I'm a Full Stack Web Developer based in NYC, and 
                     I've spent the last 10 years working in Adtech, at companies like Criteo, Triplelift, and Experian. <br></br> <br></br>
-                    Throughout this time, I've held various roles across the Engineer-Commercial spectrum; including development focused roles (Software Engineer) as well as client facing engineer roles (Solutions Engineer, TAM, etc)
+                    Throughout this time, I've held various roles across the Engineer-Commercial spectrum; including development focused roles (Software Engineer) as well as client facing engineer roles (Solutions Engineer, TAM, etc) <br></br> <br></br>
 
                     Click the Resume PDF button below to download a copy of my resume, or use the menu at the bottom of the screen to navigate through my skills and personal projects. 
             </p>
